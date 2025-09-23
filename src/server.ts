@@ -1,12 +1,15 @@
 import fastify from "fastify"
+import { app_routes } from "./routes/index.js"
 
 const PORT = 3333
 const app = fastify()
 
-app.get("/", (req, reply) => {
-    return reply.status(200).send("Hello World!")
-})
+app.register(app_routes)
 
-app.listen({ "port": PORT }, () => {
-    console.log(`Server running on port ${PORT}`)
-})
+try {
+    app.listen({ "port": PORT }, () => {
+        console.log(`Server running on port ${PORT}`)
+    })
+} catch (err) {
+    console.log("An error occurred", err)
+}
