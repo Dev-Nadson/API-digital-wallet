@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/server.ts",
-    "migrate:make": "node --import tsx ./node_modules/.bin/knex migrate:make"
+    "migrate:make": "node --import tsx ./node_modules/.bin/knex migrate:make",
+    "migrate:latest": "node --import tsx ./node_modules/.bin/knex migrate:latest"
   },
   "keywords": [],
   "author": "Dev-Nadson",
