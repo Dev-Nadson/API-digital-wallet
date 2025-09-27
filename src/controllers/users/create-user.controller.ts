@@ -8,7 +8,7 @@ async function create_user_controller(
 ) {
     const { name, email } = req.body
     await create_user_repositorie({ "name": name, "email": email })
-    return reply.status(201).send(() => console.log("Usuário criado!"))
+    return reply.status(201).send("Usuário criado!")
 }
 
 export { create_user_controller }
