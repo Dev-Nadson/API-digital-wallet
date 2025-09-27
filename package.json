@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx --watch src/server.ts",
     "migrate:make": "node --import tsx ./node_modules/.bin/knex migrate:make",
-    "migrate:latest": "node --import tsx ./node_modules/.bin/knex migrate:latest"
+    "migrate:latest": "node --import tsx ./node_modules/.bin/knex migrate:latest",
+    "migrate:down": "node --import tsx ./node_modules/.bin/knex migrate:down"
   },
   "keywords": [],
   "author": "Dev-Nadson",
