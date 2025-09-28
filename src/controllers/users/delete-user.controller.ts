@@ -5,7 +5,7 @@ import { delete_user_repositorie } from "../../repositories/users/delete-user.re
 async function delete_user_controller(req: FastifyRequest<{ Params: IUpdateUserParams }>, reply: FastifyReply) {
     const { id } = req.params
     await delete_user_repositorie(id)
-    return reply.status(204).send("Deleted")
+    return reply.status(204).send()
 }
 
 export { delete_user_controller }
