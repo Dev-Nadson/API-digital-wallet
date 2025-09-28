@@ -8,7 +8,7 @@ async function user_routes(app: FastifyInstance) {
     app.post("/create", create_user_controller)
     app.get("/list", list_user_controller)
     app.put("/update/:id", update_user_controller)
-    app.delete("/delete", delete_user_controller)
+    app.delete("/delete/:id", delete_user_controller)
 }
 
 export { user_routes }
