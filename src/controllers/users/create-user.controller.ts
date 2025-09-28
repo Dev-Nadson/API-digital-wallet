@@ -6,8 +6,8 @@ async function create_user_controller(
     req: FastifyRequest<{ Body: Iuser }>, //generics types
     reply: FastifyReply
 ) {
-    const { name, email } = req.body
-    await create_user_repositorie({ "name": name, "email": email })
+    const { name, email, password } = req.body
+    await create_user_repositorie({ "name": name, "email": email, "password": password })
     return reply.status(201).send("Usuário criado!")
 }
 

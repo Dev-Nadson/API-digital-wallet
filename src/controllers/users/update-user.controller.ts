@@ -6,9 +6,9 @@ async function update_user_controller(
     req: FastifyRequest<{ Body: Iuser, Params: IUpdateUserParams }>,
     reply: FastifyReply
 ) {
-    const { name, email } = req.body
+    const { name, email, password } = req.body
     const { id } = req.params
-    await update_user_repositorie({ "name": name, "email": email }, id)
+    await update_user_repositorie({ "name": name, "email": email, "password": password }, id)
 
     return reply.status(200).send("Usuário atualizado")
 }
