@@ -4,4 +4,8 @@ interface Iuser {
     balance?: number
 }
 
-export type { Iuser }
+interface IUpdateUserParams {
+    id: number
+}
+
+export type { Iuser, IUpdateUserParams }
