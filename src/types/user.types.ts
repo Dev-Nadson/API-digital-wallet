@@ -6,11 +6,13 @@ interface Iuser {
 }
 
 interface Itransation {
-    sender_id: number,
-}
-interface ItransationParams {
+    sender_id_number: number,
     receiver_id: number,
     amount: number
+}
+
+interface ItransationParams {
+    sender_id: number,
 }
 
 interface IUpdateUserParams {
