@@ -3,11 +3,11 @@ import type { Iuser } from "../../types/user.types.js";
 import { create_user_repositorie } from "../../repositories/users/create-user.repositorie.js";
 import { hash_text } from "../../utils/encryption.js";
 
-import z, { email } from 'zod'
+import { z } from 'zod'
 
 const user_schema = z.object({
     name: z.string(),
-    email: z.email(),
+    //    email: z.string().email(),
     password: z.string(),
     balance: z.number().optional()
 })
