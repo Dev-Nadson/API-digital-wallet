@@ -1,7 +1,7 @@
 import fastify from "fastify"
 import { app_routes } from "./routes/index.js"
 
-const PORT = 3333
+const PORT = 4000
 const app = fastify()
 
 app.register(app_routes)
