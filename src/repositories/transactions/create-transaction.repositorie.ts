@@ -1,9 +1,8 @@
 import { Knex } from "../../database/config.js";
-import type { Itransation } from "../../types/user.types.js";
+import type { Itransaction } from "../../types/user.types.js";
 
-async function create_transation_repositorie(transation: Itransation) {
-    console.log(transation)
-    const { sender_id_number, receiver_id, amount } = transation
+async function create_transaction_repositorie(transaction: Itransaction) {
+    const { sender_id_number, receiver_id, amount } = transaction
 
     await Knex.transaction(async (trx) => {
         await trx("users").where({ "id": receiver_id }).increment("balance", amount)
@@ -13,4 +12,4 @@ async function create_transation_repositorie(transation: Itransation) {
     })
 }
 
-export { create_transation_repositorie }
+export { create_transaction_repositorie }
