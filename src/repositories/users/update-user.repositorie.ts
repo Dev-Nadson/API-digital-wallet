@@ -13,7 +13,7 @@ async function update_user_repositorie(user: Iuser, req_id: IUpdateUserParams) {
         return "USER_DONT_EXISTS"
     }
 
-    const exists_email = await verify_unique_email(email);
+    const exists_email = await verify_unique_email(email, id)
 
     if (exists_email) {
         return "EMAIL_ALREADY_EXISTS"
