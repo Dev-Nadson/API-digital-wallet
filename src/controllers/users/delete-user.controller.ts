@@ -8,7 +8,7 @@ async function delete_user_controller(req: FastifyRequest<{ Params: IUpdateUserP
 
     if (user === "USER_DONT_EXISTS") {
         return reply.status(404).send({
-            message: "Conflict Error",
+            message: "non-existent user",
             data: user
         })
     }
