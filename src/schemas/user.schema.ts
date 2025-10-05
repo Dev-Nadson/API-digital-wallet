@@ -3,14 +3,16 @@ import { z } from 'zod'
 const user_schema = z.object({
     name: z.string({ message: "O campo de nome é obrigatório" })
         .min(3, "Deve conter no mínimo 3 caracteres")
-        .max(255, "Deve conter no máximo 255 caracteres"),
+        .max(255, "Deve conter no máximo 255 caracteres")
+        .trim(),
 
     email: z.email({ message: "O campo de nome é obrigatório" }).toLowerCase()
         .trim(),
 
     password: z.string({ message: "O campo de senha é obrigatório" })
         .min(3, "Deve conter no mínimo 3 caracteres")
-        .max(255, "Deve conter no máximo 255 caracteres"),
+        .max(255, "Deve conter no máximo 255 caracteres")
+        .trim(),
 
     balance: z.number()
         .positive("O saldo deve ser positivo")
