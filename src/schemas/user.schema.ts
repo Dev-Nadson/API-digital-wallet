@@ -19,4 +19,8 @@ const user_schema = z.object({
         .optional()
 })
 
-export { user_schema }
+const update_user_schema = z.object({
+    id: z.string().trim()
+})
+
+export { user_schema, update_user_schema }
