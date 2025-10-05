@@ -33,7 +33,12 @@ async function update_user_controller(
         })
     }
 
-    //Adicionar validação de email já existente
+    if (user === "EMAIL_ALREADY_EXISTS") {
+        return reply.status(409).send({
+            message: "Conflict Error",
+            data: user
+        })
+    }
 
     return reply.status(200).send(user)
 }
