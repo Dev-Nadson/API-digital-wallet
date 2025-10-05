@@ -6,11 +6,12 @@ async function update_user_repositorie(user: Iuser, req_id: IUpdateUserParams) {
     const { id } = req_id
 
     const exist_user = await Knex("users").select().where({ "id": id })
-    console.log(exist_user)
 
     if (!exist_user) {
         return "USER_DONT_EXISTS"
     }
+
+    //Adicionar validação de email já existente
 
     await Knex("users").update({ name, email, password }).where({ "id": id })
     return await Knex("users").select().where({ "id": id })

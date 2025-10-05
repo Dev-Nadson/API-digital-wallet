@@ -25,13 +25,15 @@ async function update_user_controller(
     }
 
     const user = await update_user_repositorie({ "name": name, "email": email, "password": hash_password }, { "id": number_id })
-    console.log(user)
+
     if (user === "USER_DONT_EXISTS") {
         return reply.status(404).send({
             message: "non-existent user",
             data: user
         })
     }
+
+    //Adicionar validação de email já existente
 
     return reply.status(200).send(user)
 }
