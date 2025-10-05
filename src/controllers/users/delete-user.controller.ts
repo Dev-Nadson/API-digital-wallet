@@ -4,7 +4,15 @@ import { delete_user_repositorie } from "../../repositories/users/delete-user.re
 
 async function delete_user_controller(req: FastifyRequest<{ Params: IUpdateUserParams }>, reply: FastifyReply) {
     const { id } = req.params
-    await delete_user_repositorie(id)
+    const user = await delete_user_repositorie(id)
+
+    if (user === "USER_DONT_EXISTS") {
+        return reply.status(404).send({
+            message: "Conflict Error",
+            data: user
+        })
+    }
+
     return reply.status(204).send()
 }
 
