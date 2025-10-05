@@ -6,10 +6,10 @@ const user_schema = z.object({
         .max(255, "Deve conter no máximo 255 caracteres")
         .trim(),
 
-    email: z.email({ message: "O campo de nome é obrigatório" }).toLowerCase()
+    email: z.email().toLowerCase()
         .trim(),
 
-    password: z.string({ message: "O campo de senha é obrigatório" })
+    password: z.string()
         .min(3, "Deve conter no mínimo 3 caracteres")
         .max(255, "Deve conter no máximo 255 caracteres")
         .trim(),
