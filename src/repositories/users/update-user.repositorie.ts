@@ -5,7 +5,7 @@ async function update_user_repositorie(user: Iuser, req_id: IUpdateUserParams) {
     const { name, email, password } = user
     const { id } = req_id
 
-    const exist_user = await Knex("users").select().where({ "id": id })
+    const exist_user = await Knex("users").select().where({ "id": id }).first()
 
     if (!exist_user) {
         return "USER_DONT_EXISTS"
