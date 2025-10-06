@@ -121,51 +121,37 @@ tsconfig.json
 
 - **Tipo**: SQLite
 - **Localização**: `src/database/database.db`
-- **ORM/Query Builder**: Knex.js
+- **Query Builder**: Knex.js
 - **Configuração**: Automática via `knexfile.ts`
-
-Nenhuma configuração adicional de conexão é necessária.
 
 ## 📜 Scripts Disponíveis
 
 ```bash
 # Desenvolvimento
-npm run dev              # Inicia o servidor em modo desenvolvimento
+npm run dev              # Inicia o servidor em modo desenvolvimento com hot reload
 
 # Migrações
+npm run migrate:list     # Lista todas as migrações
+npm run migrate:make     # Cria uma nova migração
 npm run migrate:latest   # Executa todas as migrações pendentes
-npm run migrate:rollback # Reverte a última migração
+npm run migrate:down     # Reverte a última migração
 
 # Seeds
+npm run seed:make        # Cria um novo seed
 npm run seed:run         # Executa os seeds do banco de dados
-
-# Build
-npm run build            # Compila o TypeScript para JavaScript
-
-# Produção
-npm start                # Inicia o servidor em modo produção
 ```
 
 ## 🔌 Endpoints da API
 
 ### Usuários
 
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `POST` | `/users` | Cria um novo usuário |
-| `GET` | `/users` | Lista todos os usuários |
-| `GET` | `/users/:id` | Busca um usuário específico |
-| `PUT` | `/users/:id` | Atualiza um usuário |
-| `DELETE` | `/users/:id` | Remove um usuário |
+**POST** `/users/create` - Cria um novo usuário no sistema
+**GET** `/users/list` - Lista todos os usuários cadastrados
+**PUT** `/users/update/:id` - Atualiza as informações de um usuário
+**DELETE** `/users/delete/:id` - Remove um usuário do sistema
 
 ### Transações
 
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `POST` | `/transactions` | Cria uma nova transação |
-| `GET` | `/transactions` | Lista todas as transações |
-| `GET` | `/transactions/user/:userId` | Lista transações de um usuário |
-
-## 📄 Licença
-
-Este é um projeto de exemplo para fins educacionais.
+**POST** `/transactions/:sender_id/create` - Cria uma nova transação entre usuários
+**GET** `/transactions/list` - Lista todas as transações realizadas
+**GET** `/transactions/:sender_id/list` - Lista todas as transações de um usuário específico
