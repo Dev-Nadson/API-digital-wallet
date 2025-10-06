@@ -40,7 +40,10 @@ async function update_user_controller(
         })
     }
 
-    return reply.status(200).send(user)
+    return reply.status(201).send({
+        message: "User updated with success",
+        data: user
+    })
 }
 
 export { update_user_controller }
