@@ -28,7 +28,7 @@ Esta API serve como backend para uma aplicação de wallet digital, oferecendo:
 Antes de começar, certifique-se de ter instalado:
 
 - **Node.js** >= 18
-- **npm** ou **yarn**
+- **npm**
 
 ## ⚙️ Instalação e Configuração
 
@@ -80,9 +80,6 @@ O servidor Fastify iniciará automaticamente na porta `3333`.
 Após esses passos, sua API estará pronta para uso! Você pode testar as rotas usando:
 - Postman
 - Insomnia
-- Thunder Client
-- cURL
-- Qualquer outro cliente HTTP
 
 ## 📁 Estrutura de Pastas
 
