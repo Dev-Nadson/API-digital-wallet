@@ -146,12 +146,17 @@ npm run seed:run         # Executa os seeds do banco de dados
 ### Usuários
 
 **POST** `/users/create` - Cria um novo usuário no sistema
+
 **GET** `/users/list` - Lista todos os usuários cadastrados
+
 **PUT** `/users/update/:id` - Atualiza as informações de um usuário
+
 **DELETE** `/users/delete/:id` - Remove um usuário do sistema
 
 ### Transações
 
 **POST** `/transactions/:sender_id/create` - Cria uma nova transação entre usuários
+
 **GET** `/transactions/list` - Lista todas as transações realizadas
+
 **GET** `/transactions/:sender_id/list` - Lista todas as transações de um usuário específico
