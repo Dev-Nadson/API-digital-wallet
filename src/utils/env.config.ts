@@ -4,6 +4,7 @@ config()
 
 const env = {
     BCRYPT_ROUNDS: Number(process.env.BCRYPT_ROUNDS) || 10,
+    PORT: Number(process.env.PORT),
 }
 
 export { env }

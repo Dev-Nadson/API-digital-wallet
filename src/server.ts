@@ -1,8 +1,9 @@
 import fastify from "fastify"
 import { app_routes } from "./routes/index.js"
 import { error_handler_middleware } from "./middlewares/error-handler-middleware.js"
+import { env } from "./utils/env.config.js"
 
-const PORT = 3333
+const PORT = env.PORT
 const app = fastify()
 
 app.register(app_routes)
