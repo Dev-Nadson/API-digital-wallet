@@ -128,7 +128,7 @@ tsconfig.json
 
 ```bash
 # Desenvolvimento
-npm run dev              # Inicia o servidor em modo desenvolvimento com hot reload
+npm run dev              # Inicia o servidor em modo desenvolvimento
 
 # Migrações
 npm run migrate:list     # Lista todas as migrações
