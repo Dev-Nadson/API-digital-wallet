@@ -1,6 +1,6 @@
 import type { FastifyRequest, FastifyReply } from "fastify";
 import { list_user_transaction_repositorie } from "../../repositories/transactions/list-user-transaction.repositorie.js";
-import type { ItransactionParams } from "../../types/user.types.js";
+import type { ItransactionParams } from "../../types/transaction.types.js";
 // req para paginação
 async function list_user_transaction_controller(req: FastifyRequest<{ Params: ItransactionParams }>, reply: FastifyReply) {
     const { sender_id } = req.params

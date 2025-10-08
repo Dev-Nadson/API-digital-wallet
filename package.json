@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --watch src/server.ts",
+    "start": "node dist/src/server.js",
+    "build": "tsc",
     "migrate:list": "node --import tsx ./node_modules/.bin/knex migrate:list",
     "migrate:make": "node --import tsx ./node_modules/.bin/knex migrate:make",
     "migrate:latest": "node --import tsx ./node_modules/.bin/knex migrate:latest",
@@ -27,6 +29,7 @@
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
     "tsx": "^4.20.5",
+    "typescript": "^5.9.3",
     "zod": "^4.1.11"
   },
   "devDependencies": {

@@ -5,7 +5,7 @@ import { env } from "./utils/env.config.js"
 import swagger from '@fastify/swagger'
 import swaggerUi from '@fastify/swagger-ui'
 
-const PORT = env.PORT
+const PORT = env.PORT || 3333
 const app = fastify()
 
 await app.register(swagger, {
@@ -22,7 +22,7 @@ await app.register(swagger, {
 })
 
 // Interface visual do Swagger em /docs
-await app.register(swaggerUi, {
+app.register(swaggerUi, {
     routePrefix: '/docs',
     staticCSP: true,
     transformStaticCSP: (header) => header,
@@ -36,8 +36,8 @@ app.register(app_routes)
 
 app.setErrorHandler(error_handler_middleware)
 
-await app.listen({ "port": PORT }, () => {
+app.listen({ "port": PORT }, () => {
     console.log(`Server running on port ${PORT}`)
-    console.log('Documentação Swagger em http://localhost:3333/docs')
+    console.log(`Documentação Swagger em http://localhost:${PORT}/docs`)
 })
 
