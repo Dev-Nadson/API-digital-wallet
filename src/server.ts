@@ -5,7 +5,8 @@ import { env } from "./utils/env.config.js"
 import swagger from '@fastify/swagger'
 import swaggerUi from '@fastify/swagger-ui'
 
-const PORT = env.PORT || 3333
+const PORT = env.PORT
+const HOST = env.HOST
 const app = fastify()
 
 await app.register(swagger, {
@@ -35,8 +36,7 @@ app.register(swaggerUi, {
 app.register(app_routes)
 
 app.setErrorHandler(error_handler_middleware)
-
-app.listen({ "port": PORT }, () => {
+app.listen({ "port": PORT, "host": HOST }, () => {
     console.log(`Server running on port ${PORT}`)
     console.log(`Documentação Swagger em http://localhost:${PORT}/docs`)
 })
